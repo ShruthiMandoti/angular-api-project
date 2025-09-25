@@ -1,0 +1,91 @@
+<div class="carousel-container">
+  <div class="carousel">
+    <div 
+      class="carousel-item" 
+      *ngFor="let img of carouselImages; let i = index"
+      [class.active]="i === carouselIndex"
+      [class.left]="i === (carouselIndex - 1 + carouselImages.length) % carouselImages.length"
+      [class.right]="i === (carouselIndex + 1) % carouselImages.length"
+      [class.far-left]="i === (carouselIndex - 2 + carouselImages.length) % carouselImages.length"
+      [class.far-right]="i === (carouselIndex + 2) % carouselImages.length"
+    >
+      <img [src]="img.src" [alt]="img.alt">
+    </div>
+    <button class="carousel-btn prev" (click)="prevImage()">&#10094;</button>
+    <button class="carousel-btn next" (click)="nextImage()">&#10095;</button>
+  </div>
+</div>
+
+<div *ngIf="users.length > 0; else loading" class="user-list">
+  <h2>User List</h2>
+  <ul>
+    <li *ngFor="let user of users">
+      <a [routerLink]="['/user', user.id]">{{ user.name }}</a>
+    </li>
+  </ul>
+</div>htr
+
+<ng-template #loading>
+  <div class="loading">
+    <p>Loading users...</p>
+  </div>
+</ng-template>
+
+<mat-paginator
+  [length]="100"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  (page)="onPageChange($event)">
+</mat-paginator>
+
+
+
+
+<mat-form-field>
+  <mat-label>Meeting date</mat-label>
+  <input matInput [matDatepicker]="datepicker" [(ngModel)]="value">
+  <mat-datepicker #datepicker/>
+  <mat-datepicker-toggle [for]="datepicker" matSuffix/>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Meeting time</mat-label>
+  <input matInput
+    [matTimepicker]="timepicker"
+    [(ngModel)]="value"
+    [ngModelOptions]="{updateOn: 'blur'}">
+  <mat-timepicker #timepicker/>
+  <mat-timepicker-toggle [for]="timepicker" matSuffix/>
+</mat-form-field>
+
+<p>Value: {{value}}</p>
+
+
+
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      
+      First
+    </ng-template>
+    Content 1
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      
+      Second
+    </ng-template>
+    Content 2
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+    
+      Third
+    </ng-template>
+
+    Content 3
+  </mat-tab>
+</mat-tab-group>
+

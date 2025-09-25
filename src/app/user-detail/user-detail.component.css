@@ -1,0 +1,96 @@
+/* user-detail.component.scss */
+
+/* Card container */
+.user-card {
+  max-width: 500px;
+  margin: var(--margin-lg) auto;
+  padding: var(--padding-md) var(--padding-lg);
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  font-family: var(--font-family);
+  line-height: 1.6;
+}
+
+/* Heading */
+.user-card h2 {
+  margin-bottom: var(--margin-md);
+  font-size: var(--font-size-lg);
+  color: var(--text-color);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+/* Paragraphs */
+.user-card p {
+  margin: var(--margin-sm) 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Labels */
+.user-card strong {
+  color: var(--text-color);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Loading message */
+.loading {
+  max-width: 500px;
+  margin: var(--margin-lg) auto;
+  padding: var(--padding-sm);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-light);
+  background: var(--bg-light);
+  border: var(--border-dashed-style);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Spinner styles */
+.spinner {
+  margin: 24px auto;
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+.spinner-blue { border-top: 8px solid #3498db; }
+.spinner-red { border-top: 8px solid #e74c3c; }
+.spinner-green { border-top: 8px solid #27ae60; }
+.spinner-yellow { border-top: 8px solid #f1c40f; }
+
+/* Wavy Loader Styles */
+.wavy-loader {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 48px;
+  margin: 24px auto 12px auto;
+  gap: 6px;
+}
+
+.wave {
+  width: var(--border-radius);
+  height: 30px;
+  border-radius: 6px;
+  background: #3498db;
+  animation: wave 1.2s infinite ease-in-out;
+}
+
+.wave1 { background: #3498db; animation-delay: 0s; }
+.wave2 { background: #e74c3c; animation-delay: 0.15s; }
+.wave3 { background: #27ae60; animation-delay: 0.3s; }
+.wave4 { background: #f1c40f; animation-delay: 0.45s; }
+.wave5 { background: #9b59b6; animation-delay: 0.6s; }
+
+@keyframes wave {
+  0%, 100% { height: 30px; }
+  50% { height: 48px; }
+}

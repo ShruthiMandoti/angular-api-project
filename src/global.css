@@ -1,0 +1,65 @@
+/* src/global.css */
+
+/* CSS Variables (Custom Properties) */
+:root {
+  /* Light Theme Colors */
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --text-color: #2c3e50;
+  --text-secondary: #444;
+  --text-light: #777;
+  --border-color: #eee;
+  --border-dashed: #ccc;
+  --bg-white: #ffffff;
+  --bg-light: #f9f9f9;
+  --bg-hover: #f5f5f5;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  /* Fonts */
+  --font-family: Arial, Helvetica, sans-serif;
+  --font-size-lg: 1.6rem;
+  --font-size-md: 1.5rem;
+  --font-size-sm: 1rem;
+  --font-weight-bold: 600;
+
+  /* Spacing */
+  --margin-lg: 40px;
+  --margin-md: 20px;
+  --margin-sm: 10px;
+  --padding-lg: 25px;
+  --padding-md: 20px;
+  --padding-sm: 10px;
+
+  /* Border */
+  --border-radius: 10px;
+  --border-radius-sm: 6px;
+  --border: 1px solid var(--border-color);
+  --border-dashed-style: 1px dashed var(--border-dashed);
+}
+
+/* Dark theme overrides */
+body.dark-theme {
+  --primary-color: #90caf9;
+  --primary-hover: #1976d2;
+  --text-color: #e0e0e0;
+  --text-secondary: #bdbdbd;
+  --text-light: #888;
+  --border-color: #333;
+  --border-dashed: #555;
+  --bg-white: #23272f;
+  --bg-light: #181a20;
+  --bg-hover: #22242a;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+
+  background: var(--bg-light) !important;
+  color: var(--text-color) !important;
+}
+
+/* Ensure html and body use the background and text color variables */
+html, body {
+  background: var(--bg-light);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
