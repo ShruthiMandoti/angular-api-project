@@ -15,7 +15,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 
 
-
 @Component({
   selector: 'app-user-list',
   standalone: true,
